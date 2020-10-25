@@ -1,0 +1,8 @@
+pyautogui
+pyserial
+pyperclip
+mysql
+unidecode
+requests
+youtube-dl
+pynput
