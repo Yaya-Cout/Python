@@ -7,7 +7,6 @@ trigger:
 - master
 
 pool:
-  environment: Imbatable
   vmImage: 'ubuntu-latest'
 strategy:
   matrix:
