@@ -1,17 +1,19 @@
-#!/bin/python3s
-nombre = 2
+#!/bin/python3
+nombre = 3
+nombres_premiers = [1, 2]
+print(2)
 try:
     while True:
         diviseurs = []
-        for diviseur in range(1, nombre+1):
+        for diviseur in nombres_premiers:
             division = nombre / diviseur
-            # diviseurs.append(diviseur)
             if division == int(division):
-                diviseurs.append(diviseurs)
-        if len(diviseurs) == 2:
+                diviseurs.append(diviseur)
+        if len(diviseurs) == 1:
             print(nombre)
+            nombres_premiers.append(nombre)
         del diviseurs
-        nombre += 1
+        nombre += 2
 except KeyboardInterrupt:
     pass
     # print(nombre)
