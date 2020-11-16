@@ -15,7 +15,7 @@ def main():
             print(url)
             args = ["youtube-dl", "--add-metadata", "-x", "-q",
                     "--skip-unavailable-fragments", "--console-title", "-i",
-                    "-o", '%(title)s.%(ext)s', "--restrict-filenames", *
+                    "-o", "%(title)s.%(ext)s", "--restrict-filenames",
                     "--all-subs", "--audio-format", filetype, url]
             # print(args)
             subprocess.run(cwd=place, args=args)
