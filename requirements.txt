@@ -6,3 +6,4 @@ unidecode
 requests
 youtube-dl
 pynput
+flake8
