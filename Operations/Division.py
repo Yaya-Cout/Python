@@ -11,8 +11,8 @@
         d = min(a, b)
         return (p, d)
 
-    #premier = random.randint(1,10)
-    #deuxieme = random.randint(1,10)
+    # premier = random.randint(1,10)
+    # deuxieme = random.randint(1,10)
     maximum = 10
     minimum = 2
     premier, deuxieme = tire_deux_nombres(maximum, minimum)
@@ -45,7 +45,8 @@
     #        deuxieme = min(a,b)
             premier, deuxieme = tire_deux_nombres(maximum, minimum)
             Erreur = 1
-            #print("Vous avez "+str(points)+" point" + ("" if points<2 else "s"))
+            # print("Vous avez "+str(points)+" point" + ("" if points<2 else\
+            #  "s"))
             affiche_points()
 
         elif Erreur == 2:
@@ -58,7 +59,8 @@
             premier, deuxieme = tire_deux_nombres(maximum, minimum)
             Erreur = 1
             points = points-0.5
-            #print("Vous avez "+str(points)+" point" + ("" if points<2 else "s"))
+            # print("Vous avez "+str(points)+" point" + ("" if points<2 else\
+            #  "s"))
             affiche_points()
         else:
             print("Erreur")

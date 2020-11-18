@@ -11,16 +11,17 @@
         nombre = input("Quel est ton nombre: ")
         try:
             nb = int(nombre)
-        except:
+        except ValueError:
             print("\n\t Et la, c'est le bug!\n")
             continue
 
         if secret == nb:
             print("Bravo")
             point = point+5
-            print("Vous avez "+str(point)+" point" + ("" if point < 2 else "s"))
+            print("Vous avez "+str(point)+" point"+("" if point < 2 else "s"))
             rejouer = input(
-                "Veux tu rejouer ? Tape pour rejouer pour rejouer,tape autre chose pour arreter.")
+                "Veux tu rejouer ? Tape pour rejouer pour rejouer,tape autre\
+                     chose pour arreter.")
             if rejouer == "1":
                 Erreur = 10
             elif rejouer == "2":
@@ -31,9 +32,10 @@
         elif Erreur == 1:
             point = point-2
             print("Vous avez perdu! Le nombre etait: "+str(secret))
-            print("Vous avez "+str(point)+" point" + ("" if point < 2 else "s"))
+            print("Vous avez "+str(point)+" point"+("" if point < 2 else "s"))
             rejouer = input(
-                "Veux tu rejouer ? Tape pour rejouer pour rejouer,tape autre chose pour arreter.")
+                "Veux tu rejouer ? Tape pour rejouer pour rejouer,tape autre\
+                     chose pour arreter.")
             dificulte = input("Quel est ton niveau de dificulté:")
             secret = random.randint(1, int(dificulte))
 

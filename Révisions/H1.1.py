@@ -1,10 +1,9 @@
 def main():
     jouer = True
-    bon = ""
     totalbon = 0
     print("N'écriver qu'un un seul mot par ligne, en minuscule et sans acents")
 
-    def verifier(bon1="mauvais", bon2="mauvais", bon3="mauvais", bon4="mauvais", bon5="mauvais"):
+    def verifier(bon1=None, bon2=None, bon3=None, bon4=None, bon5=None):
         if entre == bon1:
             global totalbon
             print("Bonne réponse")
@@ -54,8 +53,8 @@ def main():
         entre = input("Que fabriquaient-ils ? (Outils) 5/5 ")
         verifier("silex", "biface", "hachereau", "propulseur", "harpon")
 
-        print("Vous avez " + str(totalbon) + " bonne" + ("" if totalbon <
-                                                         2 else "s") + " réponse" + ("" if totalbon < 2 else "s") + " sur 10")
+        s = ("" if totalbon < 2 else "s")
+        print("Vous avez "+str(totalbon)+" bonne"+s+" réponse"+s+" sur 10")
 
 
 if __name__ == "__main__":

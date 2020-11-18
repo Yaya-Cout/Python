@@ -8,7 +8,7 @@ def main():
         if retour < 100:
             try:
                 nombre = int(nombre)
-            except:
+            except ValueError:
                 print("Et la, c'est le bug!")
                 nombre = input(
                     "Sur combient de nombres veut-tu le pourcentage? ")

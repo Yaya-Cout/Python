@@ -6,7 +6,7 @@ def main():
         nombre = input("Quel est ton nombre: ")
         try:
             nb = int(nombre)
-        except:
+        except ValueError:
             print("Et la, c'est le bug!")
             continue
 

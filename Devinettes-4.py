@@ -22,19 +22,33 @@
                 if commandes == 1:
                     print("")
                     print("Vous avez déja visionné les commandes")
-                    print('taper « credit » pour visionner les crédits;taper « nouvelle partie » pour commancer une novelle partie; taper « quitter » pour quitter;taper commandes pour voir les commandes et « aide » pour voir l'+"'"+'aide complète.')
-    #                print('taper "credit" pour visionner les crédits;taper"nouvelle partie" pour commancer une novelle partie; taper"quitter" pour quitter;taper commandes pour voir les commandes taper commandes pour voir les commandes et « aide » pour voir l'+"'"+'aide complète')
+                    print('taper « credit » pour visionner les crédits;taper\
+                         « nouvelle partie » pour commancer une novelle partie\
+                             ; taper « quitter » pour quitter; taper commandes\
+                                  pour voir les commandes et « aide » pour\
+                                       voir l'+"'"+'aide complète.')
+    #                print('taper "credit" pour visionner les crédits;\
+    # taper"nouvelle partie" pour commancer une novelle partie; taper\
+    #  "quitter"  pour quitter;taper commandes pour voir les commandes\
+    #  taper commandes pour voir les commandes et « aide » pour voir l'+"'"\
+    # +'aide complète')
                     print("")
                 else:
                     print("")
-                    print('taper « credit » pour visionner les crédits;taper « nouvelle partie » pour commancer une novelle partie; taper « quitter » pour quitter;taper commandes pour voir les commandes et « aide » pour voir l'+"'"+'aide complète.')
+                    print('taper « credit » pour visionner les crédits;taper\
+                         « nouvelle partie » pour commancer une novelle\
+                              partie; taper « quitter » pour quitter; taper\
+                                   commandes pour voir les commandes et «\
+                                        aide » pour voir l '+"' "+'aide\
+                                             complète.')
                     commandes = 1
                     print("")
 
             def aide():
                 webbrowser.open("Commandes.html")
 
-            def tour(rejouer, secret, commandes, credit, point, Erreur, Erreur2):
+            def tour(rejouer, secret, commandes, credit, point, Erreur,
+                     Erreur2):
                 """Tour de jeu"""
                 while rejouer == "rejouer":
                     nombre = input("Quel est ton nombre: ")
@@ -47,13 +61,15 @@
                         print("")
                         print("Vous avez déja visionné les credits")
                         print(
-                            "Cree par Yaya.Cout à l'aide du livre:'Programer avec python en s'amusant'")
+                            "Cree par Yaya.Cout à l'aide du livre:'Programer\
+                                 avec python en s'amusant'")
                         print("")
 
                     elif nombre == "credit":
                         print("")
                         print(
-                            "Cree par Yaya.Cout à l'aide du livre:'Programer avec python en s'amusant'")
+                            "Cree par Yaya.Cout à l'aide du livre:'Programer\
+                                 avec python en s'amusant'")
                         print("")
                         credit = 1
 
@@ -64,12 +80,18 @@
                     # elif nombre == "commandes" and commandes==1:
                     #     print("")
                     #     print("Vous avez déja visionné les commandes")
-                    #     print('taper "credit" pour visionner les crédits;taper"novelle partie" pour commancer une novelle partie; taper"quitter" pour quitter;taper commandes pour voir les commandes')
+                    #     print('taper "credit" pour visionner les crédits;\
+                    # taper"novelle partie" pour commancer une novelle\
+                    #  partie; taper"quitter" pour quitter;taper commandes\
+                    #  pour voir les commandes')
                     #     print("")
                     #
                     # elif nombre == "commandes":
                     #     print("")
-                    #     print('taper "credit" pour visionner les crédits;taper"novelle partie" pour commancer une novelle partie; taper"quitter" pour quitter;taper commandes pour voir les commandes')
+                    #     print('taper "credit" pour visionner les crédits;\
+                    # taper"novelle partie" pour commancer une novelle\
+                    #  partie; taper"quitter" pour quitter;taper commandes\
+                    #  pour voir les commandes')
                     #     commandes=1
                     #     print("")
 
@@ -91,7 +113,7 @@
 
                     try:
                         nb = int(nombre)
-                    except:
+                    except ValueError:
                         print("\n\t Et la, c'est le bug!\n")
                         continue
 
@@ -102,25 +124,17 @@
                         print("Vous avez "+str(point)+" point" +
                               ("" if point < 2 else "s"))
                         rejouer = input(
-                            "Veux tu rejouer ? Taper pour rejouer pour rejouer, taper autre chose pour arreter.")
-                        return(Erreur, Erreur2, rejouer)
-                        dificulte = input(
-                            "Quel est ton niveau de dificulté: ")
-                        try:
-                            dificulte = int(dificulte)
-                        except:
-                            print("\n\t Et la, c'est le bug!\n")
-                            dificulte = input(
-                                "Quel est ton niveau de dificulté: ")
-
-                            secret = random.randint(1, int(dificulte))
+                            "Veux tu rejouer ? Taper pour rejouer pour\
+                                 rejouer, taper autre chose pour arreter.")
+                        return (Erreur, Erreur2, rejouer)
 
                     elif Erreur == 1 and point <= 1:
                         print("Vous avez perdu! Le nombre etait: "+str(secret))
                         print("Vous avez "+str(point)+" point" +
                               ("" if point < 2 else "s"))
                         rejouer = input(
-                            "Veux tu rejouer ? Tape pour rejouer pour rejouer,tape autre chose pour arreter. ")
+                            "Veux tu rejouer ? Tape pour rejouer pour\
+                                 rejouer,tape autre chose pour arreter. ")
                 #                nombre = input("Quel est ton nombre: ")
                         return(Erreur, Erreur2, rejouer)
 
@@ -130,7 +144,8 @@
                         print("Vous avez "+str(point)+" point" +
                               ("" if point < 2 else "s"))
                         rejouer = input(
-                            "Veux tu rejouer ? Tape pour rejouer pour rejouer,tape autre chose pour arreter. ")
+                            "Veux tu rejouer ? Tape pour rejouer pour\
+                                 rejouer,tape autre chose pour arreter. ")
                 #                nombre = input("Quel est ton nombre: ")
                         return(Erreur, Erreur2, rejouer)
                 #        if secret == int(nombre):
@@ -154,7 +169,8 @@
                             if rejouer == "rejouer" or "azerty" or "Yaya.Cout":
 
                                 Erreur=11
-                                dificulte = input("Quel est ton niveau de dificulté: ")
+                                dificulte = input("Quel est ton niveau de\
+                                     dificulté: ")
                                 secret = random.randint(1,int(dificulte))
                                 if Erreur>8:
                                     Erreur=16
@@ -179,7 +195,7 @@
                 try:
                     dificulte = int(dificulte)
                     secret = random.randint(1, int(dificulte))
-                except:
+                except ValueError:
                     print("\n\t Et la, c'est le bug!\n")
                     continue
 
@@ -198,10 +214,11 @@
                 elif Erreur >= 5:
                     Erreur = 13
                 secret = random.randint(1, int(dificulte))
-        except:
+        except ValueError:
             print("Erreur de programme")
             sans_echec = input(
-                "\n Voulez vous démarrer en mode python 3 (o pour oui / autre chose pour non) ? ")
+                "\n Voulez vous démarrer en mode python 3 (o pour oui / autre\
+                     chose pour non) ? ")
             if sans_echec == "o":
                 import random
                 dificulte = 100
@@ -210,7 +227,7 @@
                     nombre = input("Quel est ton nombre: ")
                     try:
                         nb = int(nombre)
-                    except:
+                    except ValueError:
                         print("Et la, c'est le bug!")
                         continue
 
@@ -221,7 +238,7 @@
                             dificulte = input(
                                 "Quel est ton niveau de dificulté: ")
                             secret = random.randint(1, int(dificulte))
-                        except:
+                        except ValueError:
                             print("\n\t Et la, c'est le bug!\n")
                             continue
 
@@ -239,7 +256,7 @@
                     nombre = input("Quel est ton nombre: ")
                     try:
                         nb = int(nombre)
-                    except:
+                    except ValueError:
                         print("Et la, c'est le bug!")
                         continue
 
@@ -250,7 +267,7 @@
                             dificulte = input(
                                 "Quel est ton niveau de dificulté: ")
                             secret = random.randint(1, int(dificulte))
-                        except:
+                        except ValueError:
                             print("\n\t Et la, c'est le bug!\n")
                             continue
 

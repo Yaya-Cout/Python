@@ -2,7 +2,6 @@ def main():
     import webbrowser
     import time
     import random
-    opened = 0
 
     def ouvrir(URL):
         webbrowser.open(URL+str(random.randint(0, 255)))

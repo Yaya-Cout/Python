@@ -5,9 +5,11 @@
 
 trigger:
 - master
+- Alpha
 
 pool:
   vmImage: 'ubuntu-latest'
+  environment: default
 strategy:
   matrix:
     Python27:

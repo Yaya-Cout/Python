@@ -1,47 +1,48 @@
 #!/bin/python3
 # -*- coding: utf-8 -*-
-def main():
-    from tkinter import *
-    import time
+import tkinter
 
-    fenetre = Tk()
+
+def main():
+    fenetre = tkinter.Tk()
 
     # Couleur de fond
     fenetre['bg'] = 'white'
 
-    label = Label(fenetre, text="Hello World")
+    label = tkinter.Label(fenetre, text="Hello World")
     label.pack()
 
     # bouton de sortie
-    bouton = Button(fenetre, text="Fermer", command=fenetre.quit)
+    bouton = tkinter.Button(fenetre, text="Fermer", command=fenetre.quit)
     bouton.pack()
 
     # Label
-    label = Label(fenetre, text="Input :", bg="yellow")
+    label = tkinter.Label(fenetre, text="Input :", bg="yellow")
     label.pack()
 
     # Entrée
     string = ""
-    value = StringVar()
+    value = tkinter.StringVar()
     value.set("Blabla")
-    entree = Entry(fenetre, textvariable=string, width=30)
+    entree = tkinter.Entry(fenetre, textvariable=string, width=30)
     entree.pack()
 
     # Checkbutton
-    bouton = Checkbutton(fenetre, text="Nouveau ?")
+    bouton = tkinter.Checkbutton(fenetre, text="Nouveau ?")
     bouton.pack()
 
     # Radiobutton
-    value = StringVar()
-    bouton1 = Radiobutton(fenetre, text="Oui", variable=value, value=1)
-    bouton2 = Radiobutton(fenetre, text="Non", variable=value, value=2)
-    bouton3 = Radiobutton(fenetre, text="Peut être", variable=value, value=3)
+    value = tkinter.StringVar()
+    bouton1 = tkinter.Radiobutton(fenetre, text="Oui", variable=value, value=1)
+    bouton2 = tkinter.Radiobutton(fenetre, text="Non", variable=value, value=2)
+    bouton3 = tkinter.Radiobutton(
+        fenetre, text="Peut être", variable=value, value=3)
     bouton1.pack()
     bouton2.pack()
     bouton3.pack()
 
     # Liste
-    liste = Listbox(fenetre)
+    liste = tkinter.Listbox(fenetre)
     liste.insert(1, "Python")
     liste.insert(2, "PHP")
     liste.insert(3, "jQuery")
@@ -50,11 +51,12 @@ def main():
     liste.pack()
 
     # Canvas
-    canvas = Canvas(fenetre, width=150, height=120, background='yellow')
-    ligne1 = canvas.create_line(75, 0, 75, 120)
-    ligne2 = canvas.create_line(0, 60, 150, 60)
-    txt = canvas.create_text(75, 60, text="Cible",
-                             font="Arial 16 italic", fill="blue")
+    canvas = tkinter.Canvas(
+        fenetre, width=150, height=120, background='yellow')
+    # ligne1 = canvas.create_line(75, 0, 75, 120)
+    # ligne2 = canvas.create_line(0, 60, 150, 60)
+    # txt = canvas.create_text(75, 60, text="Cible",
+    #                          font="Arial 16 italic", fill="blue")
     # Vous pouvez créer d'autres éléments:
 
     # create_arc():  arc de cercle
@@ -73,27 +75,28 @@ def main():
     canvas.pack()
 
     # Scale
-    value = DoubleVar()
-    scale = Scale(fenetre, variable=value)
+    value = tkinter.DoubleVar()
+    scale = tkinter.Scale(fenetre, variable=value)
     scale.pack()
 
     # Frames
     # frame 1
-    Frame1 = Frame(fenetre, borderwidth=2, relief=GROOVE)
-    Frame1.pack(side=LEFT, padx=30, pady=30)
+    Frame1 = tkinter.Frame(fenetre, borderwidth=2, relief=tkinter.GROOVE)
+    Frame1.pack(side=tkinter.LEFT, padx=30, pady=30)
 
     # frame 2
-    Frame2 = Frame(fenetre, borderwidth=2, relief=GROOVE)
-    Frame2.pack(side=LEFT, padx=10, pady=10)
+    Frame2 = tkinter.Frame(fenetre, borderwidth=2, relief=tkinter.GROOVE)
+    Frame2.pack(side=tkinter.LEFT, padx=10, pady=10)
 
     # frame 3 dans frame 2
-    Frame3 = Frame(Frame2, bg="white", borderwidth=2, relief=GROOVE)
-    Frame3.pack(side=RIGHT, padx=5, pady=5)
+    Frame3 = tkinter.Frame(
+        Frame2, bg="white", borderwidth=2, relief=tkinter.GROOVE)
+    Frame3.pack(side=tkinter.RIGHT, padx=5, pady=5)
 
     # Ajout de labels
-    Label(Frame1, text="Frame 1").pack(padx=10, pady=10)
-    Label(Frame2, text="Frame 2").pack(padx=10, pady=10)
-    Label(Frame3, text="Frame 3", bg="white").pack(padx=10, pady=10)
+    tkinter.Label(Frame1, text="Frame 1").pack(padx=10, pady=10)
+    tkinter.Label(Frame2, text="Frame 2").pack(padx=10, pady=10)
+    tkinter.Label(Frame3, text="Frame 3", bg="white").pack(padx=10, pady=10)
 
     fenetre.mainloop()
 

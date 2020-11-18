@@ -28,7 +28,8 @@ def main():
         # iterate child elements of item
         for child in item:
             # print(list(child))
-            if child.text == None or "  " in child.text or "    " in child.text or "//" in child.text:
+            if child.text is None or "  " in child.text or "    " in\
+                    child.text or "//" in child.text:
                 pass
                 # print("coucou")
             else:
@@ -37,7 +38,7 @@ def main():
             # print(dir(child.))
             try:
                 newsitems = readxml(child, news, newsitems)
-            except:
+            except Exception:
                 pass
             # news[child.tag] = child.text.encode('utf8')
             # append news dictionary to news items list

@@ -49,11 +49,10 @@ def check_new(file, filename):
     # with open('topnewsfeed.xml') as f:
     #     # f.write(resp.content)
     #     requete = f
-    with open(filename, 'w') as csv:
-        if requests.get(url) == file:
-            return False
-        else:
-            return True
+    if requests.get(url) == file:
+        return False
+    else:
+        return True
 
 
 def savetoCSV(newsitems, filename):

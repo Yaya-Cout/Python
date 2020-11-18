@@ -1,6 +1,6 @@
 ﻿def main():
     import random
-    from partage import *
+    import partage
 
     def affiche_points():
         print("Vous avez "+str(points)+" point" + ("" if points < 2 else "s"))
@@ -15,7 +15,7 @@
     """
 
     maximum = 100
-    premier, deuxieme = tire_deux_nombres(maximum)
+    premier, deuxieme = partage.tire_deux_nombres(maximum)
     Erreur = 1
     points = 0
 
@@ -23,7 +23,7 @@
         nombre = input(str(premier) + "-" + str(deuxieme) + "=")
         if (premier)-(deuxieme) == int(nombre):
             print("Bravo")
-            premier, deuxieme = tire_deux_nombres(maximum)
+            premier, deuxieme = partage.tire_deux_nombres(maximum)
     #        premier = random.randint(1,10)
     #        deuxieme = random.randint(1,10)
             Erreur = 1
@@ -42,10 +42,11 @@
     #        b = random.randint(1,100)
     #        premier = max(a,b)
     #        deuxieme = min(a,b)
-            premier, deuxieme = tire_deux_nombres(maximum)
+            premier, deuxieme = partage.tire_deux_nombres(maximum)
             Erreur = 1
             points = points-1
-            #print("Vous avez "+str(points)+" point" + ("" if points<2 else "s"))
+            # print("Vous avez "+str(points)+" point" + ("" if points<2 else\
+            #  "s"))
             affiche_points()
         else:
             print("Erreur")

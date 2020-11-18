@@ -15,7 +15,7 @@ def main(win):
             win.addstr(str(key))
             if key == os.linesep:
                 break
-        except Exception as e:
+        except Exception:
             # No input
             pass
 
