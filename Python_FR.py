@@ -6,7 +6,7 @@ def main():
         lastcmd = ""
         while True:
             for loop in range(instances):
-                print("... ", end="")
+                print("... ")
             cmd2points = input()
             cmd2points = "\n    " + cmd2points
             if lastcmd == "\n    " and cmd2points == "\n    ":
