@@ -29,7 +29,7 @@ def main():
                         pass
                     else:
                         exec("print("+str(cmd)+")")
-                except:
+                except Exception:
                     pass
         except AssertionError:
             print("L'instruction asset à échoué")
@@ -81,13 +81,15 @@ def main():
             print("Profondeur de récursivité maximale dépassée")
             print(sys.exc_info()[1])
         except ReferenceError:
-            print("Un proxy de référance faible et utilisé pour accéder à un attribut du référent après qu'il a été récupéré")
+            print("Un proxy de référance faible et utilisé pour accéder à un\
+                 attribut du référent après qu'il a été récupéré")
             print(sys.exc_info()[1])
         except RuntimeError:
             print("Erreur non connue")
             print(sys.exc_info()[1])
         except StopIteration:
-            print("next() indique qu'aucun n'autre element n'est produit par l'itérateur")
+            print("next() indique qu'aucun n'autre element n'est produit par\
+                 l'itérateur")
             print(sys.exc_info()[1])
         except StopAsyncIteration:
             print("anext() à arrété l'ittération")
@@ -108,7 +110,8 @@ def main():
             print("Arret")
             print(sys.exc_info()[1])
         except TypeError:
-            print("Immposible d'ajouter deux classes différantes ou vous avez oublier d'ajouter le.s paramètre de la fonction")
+            print("Immposible d'ajouter deux classes différantes ou vous avez\
+                 oublier d'ajouter le.s paramètre de la fonction")
             print(sys.exc_info()[1])
         except UnicodeEncodeError:
             print("Erreur lors de l'encodage")
@@ -123,7 +126,8 @@ def main():
             print("Une erreur lié à l'unicode s'est produite !")
             print(sys.exc_info()[1])
         except ValueError:
-            print("La valeur de la fonction est inapropriée mais le type est bon")
+            print("La valeur de la fonction est inapropriée mais le type est\
+                 bon")
             print(sys.exc_info()[1])
         except ZeroDivisionError:
             print("Impossible de diviser par zéro")
@@ -142,8 +146,6 @@ def main():
         except Warning:
             print("Attention : " + sys.exc_info())
         except BaseException:
-            print(sys.exc_info())
-        except:
             print(sys.exc_info())
         # print ("%s" % sys.exc_info()[1])
         # print (sys.exc_info())

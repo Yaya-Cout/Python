@@ -6,7 +6,7 @@ def main():
         nombre = input("Quel est ton nombre ? ")
         try:
             nombre = int(nombre)
-        except:
+        except ValueError:
             print("Veuillez entrer un nombre valide")
             continue
         if nombre < secret:

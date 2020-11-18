@@ -1,10 +1,11 @@
-def func(a):
-    return a - 1
+def lint():
+    import os
+    reponse = os.system("flake8 .")
+    if reponse == 0:
+        return True
+    else:
+        return False
 
 
 def tests():
-    return True
-
-
-def test_testmethod():
-    assert tests()
+    assert lint()

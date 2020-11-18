@@ -8,7 +8,8 @@ def main():
     with serial.Serial(port, 9600, timeout=10, writeTimeout=10) as port_serie:
         if port_serie.isOpen():
             mode = input(
-                "Entrez un nombre (1 pour lecture, Autre chose pour écriture) : ")
+                "Entrez un nombre (1 pour lecture,\
+                     Autre chose pour écriture) : ")
             if mode == "1":
                 while True:
                     ligne = port_serie.readline()

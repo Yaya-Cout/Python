@@ -1,4 +1,5 @@
 def main():
+    import PIL
     from PIL import Image
     import os
     import argparse
@@ -6,16 +7,15 @@ def main():
     def transparant(rc, gc, bc):
         colonne, ligne = img.size
         for c in range(colonne):
-            for l in range(ligne):
-                pixel = img.getpixel((c, l))
-                try:
-                    r, g, b, a = pixel
-                except ValueError:
-                    r, g, b = pixel
+            for line in range(ligne):
+                pixel = img.getpixel((c, line))
+                r = pixel[0]
+                g = pixel[1]
+                b = pixel[2]
                 if r == rc:
                     if g == gc:
                         if b == bc:
-                            img.putpixel((c, l), (255, 255, 255, 0))
+                            img.putpixel((c, line), (255, 255, 255, 0))
 
     def nom_fichier():
         existance = True
@@ -49,15 +49,17 @@ def main():
         img = Image.open(image_open)
     except IOError:
         try:
-            selectfile = 'zenity --file-selection --title="Veillez séléctioner une image"'
+            selectfile = 'zenity --file-selection --title="Veillez\
+                 séléctioner une image"'
             image_open = os.popen(selectfile).read()
             image_open = image_open.replace("\n", "")
             img = Image.open(image_open)
-        except:
+        except PIL.UnidentifiedImageError:
             print("Erreur lors de l'ouverture du fichier")
     print("Nom : " + image_open + " Format : " + img.format +
           " Résolution : %dx%d" % img.size + " Mode d'image : " + img.mode)
-    selectcolor = 'zenity --color-selection --title="Veillez séléctioner une couleur"'
+    selectcolor = 'zenity --color-selection --title="Veillez séléctioner une\
+         couleur"'
     color = os.popen(selectcolor).read()
     color = color.replace("\n", "")
     if 'rgba' in color:
