@@ -7,5 +7,15 @@ requests
 youtube-dl
 pynput
 flake8
+pyaudio
+SpeechRecognition
+imutils
+gpiozero
+matplotlib
+termcolor
+scipy
+pydub
+opencv-python
+Wikipedia-API
 
 pillow>=7.1.0 # not directly required, pinned by Snyk to avoid a vulnerability
