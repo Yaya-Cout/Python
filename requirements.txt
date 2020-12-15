@@ -7,7 +7,6 @@ requests
 youtube-dl
 pynput
 flake8
-pyaudio
 SpeechRecognition
 imutils
 gpiozero
