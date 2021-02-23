@@ -18,5 +18,8 @@ pydub
 opencv-python
 Wikipedia-API
 flask
+mysql-connector-python
+notify2
+pyenchant
 
 pillow>=8.1.0 # not directly required, pinned by Snyk to avoid a vulnerability
