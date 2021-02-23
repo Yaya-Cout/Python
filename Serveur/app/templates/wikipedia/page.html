@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>{{ page }} - Wikipedia</title>
+</head>
+
+<body>
+    <header>
+        <h1>
+            Bienvenue sur la page wikipedia « {{ page }} »
+        </h1>
+    </header>
+    <p>
+        <a href="/">Accueil</a>
+    </p>
+    <p>
+        <a href="/wikipedia/">Accueil du dossier</a>
+    </p>
+    <br>
+    <form encoding="utf8_bin" method="post" action="page.html">
+        {%for i in page_py.sections%}
+        <p>
+            {{ i }}
+        </p>
+        {%endfor%}
+        <br><br><br><br><br><br><br> {%for i in page_py.sections%}
+        <p>
+            {{ i }}
+        </p>
+        {%endfor%}
+    </form>
+    <p>
+    </p>
+</body>
+
+</html>

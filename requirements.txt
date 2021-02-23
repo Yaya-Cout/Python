@@ -1,6 +1,7 @@
 pyautogui
 pyserial
 pyperclip
+MySQL-python
 mysql
 unidecode
 requests
@@ -16,6 +17,7 @@ scipy
 pydub
 opencv-python
 Wikipedia-API
+flask
 mysql-connector-python
 notify2
 pyenchant
