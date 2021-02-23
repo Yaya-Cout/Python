@@ -1,7 +1,7 @@
 pyautogui
 pyserial
 pyperclip
-MySQL-python
+# MySQL-python
 mysql
 unidecode
 requests
