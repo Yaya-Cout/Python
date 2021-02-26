@@ -10,7 +10,9 @@ smsdic = {"cc": "Coucou, ", "cv": "Ça va ?", "tfq": "Tu fait quoi ?",
           "yes": "Oui", "oupsy": "Oups", "dacc": "D'accord", "ya": "Il y a",
           "qqc": "Quelque chose", "pb": "Problème", "pd": "Pendent",
           "jtd": "Je te dis", "jt": "J'était", "jv": "Je vait",
-          "tv": "Tu veux", "azerty": "Rien"}
+          "tv": "Tu veux", "azerty": "Rien", "js": "Je suis",
+          "jp": "Je pense", "ts": "Tu sait", "tk": "Ne t'inquiète pas",
+          "jsp": "Je ne sis pas"}
 
 
 def in_dic(key) -> bool:
