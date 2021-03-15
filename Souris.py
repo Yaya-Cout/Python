@@ -62,7 +62,7 @@ def main():
                                     pyautogui.scroll(-1)
                                 elif ligne == "OFF":
                                     os.popen("systemctl suspend")
-                            except:
+                            except pyautogui.FailSafeException:
                                 pass
             except serial.serialutil.SerialException:
                 pass

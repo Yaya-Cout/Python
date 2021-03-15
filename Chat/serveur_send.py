@@ -28,12 +28,8 @@ while True:
     with open(filename, 'r') as msgfile:
         msglst = msgfile.read().split("\n")
         # for item in msglst:
-        for line in range(len(msglst)):
+        for item, line in enumerate(msglst):
             # print(line)
-            try:
-                item = msglst[line]
-            except:
-                continue
             if item == "":
                 continue
             io = StringIO(item)
