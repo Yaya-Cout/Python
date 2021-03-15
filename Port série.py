@@ -6,7 +6,7 @@ def main():
     # port = "/dev/ttyACM0"
     # port = "/dev/rfcomm4"
     # port = "/dev/ttyUSB0"
-    with serial.Serial(port, vitesse, timeout=10, writeTimeout=10) as port_serie:
+    with serial.Serial(port, speed, timeout=10, writeTimeout=10) as port_serie:
         if port_serie.isOpen():
             mode = input(
                 "Entrez un nombre (1 pour lecture,\
