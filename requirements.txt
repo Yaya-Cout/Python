@@ -26,3 +26,4 @@ dbus-python
 face_recognition
 simple-crypt
 PyCryptodome
+pillow>=8.1.1 # not directly required, pinned by Snyk to avoid a vulnerability
