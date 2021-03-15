@@ -3,7 +3,7 @@ import gi
 import getpass
 import requests
 import os
-import text
+# import text
 
 gi.require_version("Gtk", "3.0")
 import gi.repository.Gtk as Gtk

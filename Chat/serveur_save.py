@@ -1,4 +1,4 @@
-erver to save sended messages"""
+"""Server to save sended messages"""
 import json
 import os
 import socket
