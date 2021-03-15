@@ -21,3 +21,8 @@ flask
 mysql-connector-python
 notify2
 pyenchant
+pygobject
+dbus-python
+face_recognition
+simple-crypt
+PyCryptodome
