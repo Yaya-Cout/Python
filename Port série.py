@@ -1,11 +1,12 @@
 def main():
     import serial
     import unidecode
-    # port = input("Quel port voulez-vous ? ")
-    port = "/dev/ttyACM0"
+    port = "/dev/" + input("Quel port voulez-vous ? ")
+    speed = int(input("Quel vitesse voulez-vous ? "))
+    # port = "/dev/ttyACM0"
     # port = "/dev/rfcomm4"
     # port = "/dev/ttyUSB0"
-    with serial.Serial(port, 9600, timeout=10, writeTimeout=10) as port_serie:
+    with serial.Serial(port, vitesse, timeout=10, writeTimeout=10) as port_serie:
         if port_serie.isOpen():
             mode = input(
                 "Entrez un nombre (1 pour lecture,\
