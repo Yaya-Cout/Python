@@ -1,6 +1,6 @@
 # import the necessary packages
 from __future__ import print_function
-import numpy as np
+# import numpy as np
 import cv2
 # load the image
 image = cv2.imread("/home/neo/Images/Foret.jpg")

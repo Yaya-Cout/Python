@@ -1,8 +1,7 @@
 """Server to save sended messages"""
 import json
 import os
-import socket
-from flask import Flask, render_template, request, send_from_directory, Response, request
+from flask import Flask, Response, request
 os.environ["FLASK_ENV"] = "deployment"
 
 app = Flask(__name__)

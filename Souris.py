@@ -1,10 +1,12 @@
-def main():
-    import pyautogui
-    import serial
-    import subprocess
-    import os
-    import time
+"""Mouve mouse with a Arduino and a infrared remote control"""
+import pyautogui
+import serial
+# import subprocess
+import os
+import time
 
+
+def main():
     speed = 50
     # port = input("Quel port voulez-vous ? ")
 
@@ -62,7 +64,7 @@ def main():
                                     os.popen("systemctl suspend")
                             except:
                                 pass
-            except:
+            except serial.serialutil.SerialException:
                 pass
     # x, y = pyautogui.position()
     # print("X : " + str(x) + " Y : " + str(y))
