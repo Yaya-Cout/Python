@@ -3,6 +3,9 @@ import notify2
 import json
 import os
 from flask import Flask, request, Response
+from os.path import expanduser
+
+home = expanduser("~")
 os.environ["FLASK_ENV"] = "deployment"
 
 app = Flask(__name__)
@@ -23,6 +26,8 @@ def index():
         host = request.args.get('host')
         msg = request.args.get('msg')
 
+    with open(home+"/.local/share/blablachathist.txt", "a") as hist:
+        hist.write(json.dumps({'user': user, 'host': host, 'msg': msg})+"\n")
     n = notify2.Notification(user+"@"+host,
                              msg,
                              #  "notification-message-im"   # Icon name

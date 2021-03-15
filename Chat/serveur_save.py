@@ -1,4 +1,4 @@
-"""Server to save sended messages"""
+erver to save sended messages"""
 import json
 import os
 import socket
@@ -23,13 +23,13 @@ def index():
         msg = request.args.get('msg')
 
     print(request.remote_addr)
-    if socket.gethostbyname(sendhost) == request.remote_addr:
-        print("Vrai")
-    else:
-        print("SPAM")
-        print(socket.gethostbyname(sendhost))
-        print(request.remote_addr)
-        return "SPAM"
+    # if socket.gethostbyname(sendhost) == request.remote_addr:
+    #     print("Vrai")
+    # else:
+    #     print("SPAM")
+    #     print(socket.gethostbyname(sendhost))
+    #     print(request.remote_addr)
+    #     return "SPAM"
     jsonvalue = json.dumps(
         {'user': user, 'notifyhost': notifyhost, 'sendhost': sendhost, 'msg': msg})
     resp = Response(jsonvalue)
