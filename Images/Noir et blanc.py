@@ -1,8 +1,9 @@
 def main():
+    import argparse
+    import os
+
     import PIL
     from PIL import Image
-    import os
-    import argparse
 
     def noirblanc():
         colonne, ligne = img.size
@@ -24,7 +25,7 @@ def main():
         else:
             return nom
         while existance:
-            nom = '/home/neo/out(' + str(nombre) + ').png'
+            nom = "/home/neo/out(" + str(nombre) + ").png"
             if os.path.isfile(nom):
                 nombre += 1
             else:
@@ -45,8 +46,15 @@ def main():
             img = Image.open(image_open)
         except PIL.UnidentifiedImageError:
             print("Erreur lors de l'ouverture du fichier")
-    print("Nom : " + image_open + " Format : " + img.format +
-          " Résolution : %dx%d" % img.size + " Mode d'image : " + img.mode)
+    print(
+        "Nom : "
+        + image_open
+        + " Format : "
+        + img.format
+        + " Résolution : %dx%d" % img.size
+        + " Mode d'image : "
+        + img.mode
+    )
     print(img.getpixel((0, 0)))
     noirblanc()
 

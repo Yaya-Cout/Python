@@ -1,5 +1,6 @@
 def main():
     import random
+
     dificulte = 100
     secret = random.randint(1, int(dificulte))
     while True:

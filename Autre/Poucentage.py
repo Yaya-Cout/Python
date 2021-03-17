@@ -10,8 +10,7 @@ def main():
                 nombre = int(nombre)
             except ValueError:
                 print("Et la, c'est le bug!")
-                nombre = input(
-                    "Sur combient de nombres veut-tu le pourcentage? ")
+                nombre = input("Sur combient de nombres veut-tu le pourcentage? ")
                 retour = 0
                 pourcentage = 0
                 continue

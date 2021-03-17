@@ -1,7 +1,7 @@
 def main():
-    bonjour = 'Salut tout le monde'
-    le_monde = 'appuie sur 1 ou 2'
-    print(bonjour + ' ' + le_monde)
+    bonjour = "Salut tout le monde"
+    le_monde = "appuie sur 1 ou 2"
+    print(bonjour + " " + le_monde)
 
     test = input()
     """
@@ -11,25 +11,25 @@ def main():
     """
     print(test)
 
-    caractere = ''
-    if test == '1':
-        caractere = 'a'
-    elif test == '2':
-        caractere = 'b'
+    caractere = ""
+    if test == "1":
+        caractere = "a"
+    elif test == "2":
+        caractere = "b"
     else:
-        caractere = 'ERR'
+        caractere = "ERR"
     print(caractere)
 
-    print('Dictionnaire')
-    dico = {'a': 1, 'b': 2, 'y': 25, 'z': 0}
+    print("Dictionnaire")
+    dico = {"a": 1, "b": 2, "y": 25, "z": 0}
 
-    chaine = 'abzy'
+    chaine = "abzy"
     total = 0
     for c in chaine:
         print(c)
         print(dico[c])
         total = total + dico[c]
-    print('total: ' + str(total))
+    print("total: " + str(total))
     """
     if test == '2':
         1=a

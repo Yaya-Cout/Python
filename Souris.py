@@ -1,9 +1,10 @@
 """Mouve mouse with a Arduino and a infrared remote control"""
-import pyautogui
-import serial
 # import subprocess
 import os
 import time
+
+import pyautogui
+import serial
 
 
 def main():
@@ -26,8 +27,10 @@ def main():
             time.sleep(1)
         for i in range(10):
             try:
-                port = baseport+str(i)
-                with serial.Serial(port, 9600, timeout=10, writeTimeout=10) as port_serie:
+                port = baseport + str(i)
+                with serial.Serial(
+                    port, 9600, timeout=10, writeTimeout=10
+                ) as port_serie:
                     if port_serie.isOpen():
                         print(port)
                         while True:
@@ -55,7 +58,7 @@ def main():
                                 elif ligne == "CLICK":
                                     pyautogui.click()
                                 elif ligne == "RIGHT_CLICK":
-                                    pyautogui.click(button='right')
+                                    pyautogui.click(button="right")
                                 elif ligne == "SCROLL_UP":
                                     pyautogui.scroll(1)
                                 elif ligne == "SCROLL_DOWN":

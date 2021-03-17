@@ -1,9 +1,10 @@
 # !/usr/bin/python3
 
+
 def main():
     Erreur = 0
     print(Erreur)
-    Erreur = Erreur+1
+    Erreur = Erreur + 1
     print(Erreur)
     Erreur += 1
     print(Erreur)

@@ -32,22 +32,22 @@ def print_categorymembers(categorymembers, level=0, max_level=1):
         print("%s: %s (ns: %d)" % ("*" * (level + 1), c.title, c.ns))
         if c.ns == wikipediaapi.Namespace.CATEGORY and level < max_level:
             print_categorymembers(
-                c.categorymembers, level=level + 1, max_level=max_level)
+                c.categorymembers, level=level + 1, max_level=max_level
+            )
 
 
 wiki_wiki = wikipediaapi.Wikipedia(
-    language='fr',
-    extract_format=wikipediaapi.ExtractFormat.WIKI
+    language="fr", extract_format=wikipediaapi.ExtractFormat.WIKI
 )
 
 if __name__ == "__main__":
 
-    page_py = wiki_wiki.page('Python_(programming_language)')
+    page_py = wiki_wiki.page("Python_(programming_language)")
 
     print("Page - Exists: %s" % page_py.exists())
     # Page - Exists: True
 
-    page_missing = wiki_wiki.page('NonExistingPageWithStrangeName')
+    page_missing = wiki_wiki.page("NonExistingPageWithStrangeName")
     print("Page - Exists: %s" % page_missing.exists())
     # Page - Exists: False
 
@@ -56,14 +56,14 @@ if __name__ == "__main__":
     print("Page - Summary: %s" % page_py.summary[0:60])
     # Page - Summary: Python is a widely used high-level programming language for
 
-    print("fullurl : "+page_py.fullurl)
-    print("canonicalurl : "+page_py.canonicalurl)
+    print("fullurl : " + page_py.fullurl)
+    print("canonicalurl : " + page_py.canonicalurl)
 
     print_langlinks(page_py)
 
     print_sections(page_py.sections)
 
-    page_py_en = page_py.langlinks['en']
+    page_py_en = page_py.langlinks["en"]
     print("Page - Summary: %s" % page_py_en.summary[0:60])
 
     print_links(page_py)

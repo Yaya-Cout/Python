@@ -1,5 +1,6 @@
 def main():
     import pyautogui
+
     while True:
         x, y = pyautogui.position()
         print("X : " + str(x) + " Y : " + str(y))

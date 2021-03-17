@@ -1,7 +1,8 @@
 def main():
     # import re
-    import requests
     import xml.etree.ElementTree as ET
+
+    import requests
 
     def parseXML(xmlfile):
         # create element tree object
@@ -28,8 +29,12 @@ def main():
         # iterate child elements of item
         for child in item:
             # print(list(child))
-            if child.text is None or "  " in child.text or "    " in\
-                    child.text or "//" in child.text:
+            if (
+                child.text is None
+                or "  " in child.text
+                or "    " in child.text
+                or "//" in child.text
+            ):
                 pass
                 # print("coucou")
             else:
@@ -47,13 +52,13 @@ def main():
         return newsitems
 
     # parseXML('/home/neo/Documents/Python/topnewsfeed.xml')
-    n = requests.get('https://yaya.cout.free.fr')
+    n = requests.get("https://yaya.cout.free.fr")
     print(n.content)
     # with open('Page.html', 'wb') as f:
     #     f.write(n.content)
     #     print(open('Page.html'))
     # parseXML('topnewsfeed.xml')
-    parseXML('Page.html')
+    parseXML("Page.html")
 
     # with open('Page.html', 'wb') as f:
     #     # f.write(n)

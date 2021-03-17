@@ -1,6 +1,7 @@
 ﻿def main():
     import random
     import webbrowser
+
     webbrowser.open("file:///home/neo/Documents/Python/Commandes.html")
     erreur = 10
     rejouer = "rejouer"
@@ -17,10 +18,12 @@
         dificulte = input("Quel est ton niveau de dificulté:")
 
     if dificulte == "commandes":
-        print('taper "credit" pour visionner les crédits;\
+        print(
+            'taper "credit" pour visionner les crédits;\
              taper "novelle partie" pour commancer une novelle partie; \
                  taper "quitter" pour quitter; taper commandes pour voir les \
-                     commandes')
+                     commandes'
+        )
         commandes = 1
 
     print('Pour voir les commandes taper "commandes"')
@@ -33,44 +36,50 @@
             print("Vous avez déja visionné les credits")
             print(
                 "Cree par Yaya.Cout à l'aide du livre:'Programer avec python\
-                     en s'amusant'")
+                     en s'amusant'"
+            )
             print("")
 
         elif nombre == "credit":
             print("")
             print(
                 "Cree par Yaya.Cout à l'aide du livre:'Programer avec python\
-                     en s'amusant'")
+                     en s'amusant'"
+            )
             print("")
             credit = 1
 
         elif nombre == "commandes" and commandes == 1:
             print("")
             print("Vous avez déja visionné les commandes")
-            print('taper "credit" pour visionner les crédits;\
+            print(
+                'taper "credit" pour visionner les crédits;\
                 taper "novelle partie" pour commancer une novelle partie; \
                     taper "quitter" pour quitter; taper commandes pour voir\
-                         les commandes')
+                         les commandes'
+            )
             print("")
 
         elif nombre == "commandes":
             print("")
-            print('taper "credit" pour visionner les crédits;\
+            print(
+                'taper "credit" pour visionner les crédits;\
                 taper "novelle partie" pour commancer une novelle partie;\
                      taper "quitter" pour quitter; taper commandes pour voir\
-                          les commandes')
+                          les commandes'
+            )
             commandes = 1
             print("")
 
         elif nombre == "nouvelle partie":
-            print("Le nombre etait: "+str(secret))
-            print("Vous avez "+str(point)+" point"+("" if point < 2 else "s"))
+            print("Le nombre etait: " + str(secret))
+            print("Vous avez " + str(point) + " point" + ("" if point < 2 else "s"))
             dificulte = input("Quel est ton niveau de dificulté:")
             secret = random.randint(1, int(dificulte))
 
         elif nombre == "quitter":
-            print("Le nombre etait: "+str(secret))
-            print("Vous avez "+str(point)+" point"+("" if point < 2 else "s"))
+            print("Le nombre etait: " + str(secret))
+            print("Vous avez " + str(point) + " point" + ("" if point < 2 else "s"))
             break
 
         try:
@@ -82,11 +91,12 @@
         # elif str(secret) == nombre:
         if secret == nb:
             print("Bravo")
-            point = point+5
-            print("Vous avez "+str(point)+" point"+("" if point < 2 else "s"))
+            point = point + 5
+            print("Vous avez " + str(point) + " point" + ("" if point < 2 else "s"))
             rejouer = input(
                 "Veux tu rejouer ? Tape pour rejouer pour rejouer,tape autre\
-                     chose pour arreter.")
+                     chose pour arreter."
+            )
             if rejouer == "rejouer":
                 dificulte = input("Quel est ton niveau de dificulté:")
             try:
@@ -102,41 +112,43 @@
                     erreur = 13
 
         elif erreur == 1 and point <= 1:
-            print("Vous avez perdu! Le nombre etait: "+str(secret))
-            print("Vous avez "+str(point)+" point"+("" if point < 2 else "s"))
+            print("Vous avez perdu! Le nombre etait: " + str(secret))
+            print("Vous avez " + str(point) + " point" + ("" if point < 2 else "s"))
             rejouer = input(
                 "Veux tu rejouer ? Tape pour rejouer pour rejouer,tape autre\
-                     chose pour arreter.")
+                     chose pour arreter."
+            )
             dificulte = input("Quel est ton niveau de dificulté:")
             secret = random.randint(1, int(dificulte))
-    #                nombre = input("Quel est ton nombre: ")
+            #                nombre = input("Quel est ton nombre: ")
             erreur = 11
             secret = random.randint(1, int(dificulte))
 
         elif erreur == 1:
-            point = point-2
-            print("Vous avez perdu! Le nombre etait: "+str(secret))
-            print("Vous avez "+str(point)+" point"+("" if point < 2 else "s"))
+            point = point - 2
+            print("Vous avez perdu! Le nombre etait: " + str(secret))
+            print("Vous avez " + str(point) + " point" + ("" if point < 2 else "s"))
             rejouer = input(
                 "Veux tu rejouer ? Tape pour rejouer pour rejouer,tape autre\
-                     chose pour arreter.")
+                     chose pour arreter."
+            )
             dificulte = input("Quel est ton niveau de dificulté:")
             secret = random.randint(1, int(dificulte))
-    #                nombre = input("Quel est ton nombre: ")
+            #                nombre = input("Quel est ton nombre: ")
             erreur = 11
 
-    #        if secret == int(nombre):
-    #                print("Correct")
+        #        if secret == int(nombre):
+        #                print("Correct")
         # elif str(secret) > nombre:
         elif secret > nb:
             print("Trop petit")
-            erreur = erreur-1
-            print("Il vous reste " + str(erreur)+" essais")
+            erreur = erreur - 1
+            print("Il vous reste " + str(erreur) + " essais")
 
         elif str(secret) < nombre:
             print("Trop grand")
-            erreur = erreur-1
-            print("Il vous reste " + str(erreur)+" essais")
+            erreur = erreur - 1
+            print("Il vous reste " + str(erreur) + " essais")
 
         # else:
         #     print("Et la, c'est le bug!")

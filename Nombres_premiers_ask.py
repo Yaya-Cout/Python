@@ -8,7 +8,7 @@ while True:
         continue
     try:
         diviseurs = []
-        for diviseur in range(1, nombre+1):
+        for diviseur in range(1, nombre + 1):
             division = nombre / diviseur
             # diviseurs.append(diviseur)
             if division == int(division):

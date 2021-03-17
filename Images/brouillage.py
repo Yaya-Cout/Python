@@ -40,11 +40,12 @@ def main():
 
     # img.putpixel((200,150),(255,0,0))
 
-    from PIL import Image
-    import random
     import os
+    import random
 
-    image_open = 'file'
+    from PIL import Image
+
+    image_open = "file"
     try:
         img = Image.open(image_open)
     except IOError:
@@ -56,10 +57,17 @@ def main():
             img = Image.open(image_open)
         except IOError:
             print("Erreur d'ouverture du fichier")
-    print("Nom : " + image_open + " Format : " + img.format +
-          " Résolution : %d×%d" % img.size + " Mode d'image : " + img.mode)
+    print(
+        "Nom : "
+        + image_open
+        + " Format : "
+        + img.format
+        + " Résolution : %d×%d" % img.size
+        + " Mode d'image : "
+        + img.mode
+    )
     colonne, ligne = img.size
-    total_pixels = ligne*colonne
+    total_pixels = ligne * colonne
     nombre_tour = random.randint(0, total_pixels / 2)
     tours_faits = 0
     while True:

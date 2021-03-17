@@ -1,12 +1,12 @@
 def main():
-    import webbrowser
-    import time
     import random
+    import time
+    import webbrowser
 
     def ouvrir(URL):
-        webbrowser.open(URL+str(random.randint(0, 255)))
+        webbrowser.open(URL + str(random.randint(0, 255)))
         print(time.time())
-        opened = + 1
+        opened = +1
         print(opened)
         time.sleep(2)
 

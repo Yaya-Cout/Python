@@ -7,7 +7,7 @@ def main():
     fenetre = tkinter.Tk()
 
     # Couleur de fond
-    fenetre['bg'] = 'white'
+    fenetre["bg"] = "white"
 
     label = tkinter.Label(fenetre, text="Hello World")
     label.pack()
@@ -35,8 +35,7 @@ def main():
     value = tkinter.StringVar()
     bouton1 = tkinter.Radiobutton(fenetre, text="Oui", variable=value, value=1)
     bouton2 = tkinter.Radiobutton(fenetre, text="Non", variable=value, value=2)
-    bouton3 = tkinter.Radiobutton(
-        fenetre, text="Peut être", variable=value, value=3)
+    bouton3 = tkinter.Radiobutton(fenetre, text="Peut être", variable=value, value=3)
     bouton1.pack()
     bouton2.pack()
     bouton3.pack()
@@ -51,8 +50,7 @@ def main():
     liste.pack()
 
     # Canvas
-    canvas = tkinter.Canvas(
-        fenetre, width=150, height=120, background='yellow')
+    canvas = tkinter.Canvas(fenetre, width=150, height=120, background="yellow")
     # ligne1 = canvas.create_line(75, 0, 75, 120)
     # ligne2 = canvas.create_line(0, 60, 150, 60)
     # txt = canvas.create_text(75, 60, text="Cible",
@@ -89,8 +87,7 @@ def main():
     Frame2.pack(side=tkinter.LEFT, padx=10, pady=10)
 
     # frame 3 dans frame 2
-    Frame3 = tkinter.Frame(
-        Frame2, bg="white", borderwidth=2, relief=tkinter.GROOVE)
+    Frame3 = tkinter.Frame(Frame2, bg="white", borderwidth=2, relief=tkinter.GROOVE)
     Frame3.pack(side=tkinter.RIGHT, padx=5, pady=5)
 
     # Ajout de labels

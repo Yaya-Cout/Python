@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 def main():
     try:
-        import unidecode
         import sys
+
+        import unidecode
 
         def entre(text):
             version = sys.version_info[:1]
@@ -27,7 +28,7 @@ def main():
             for i in alphabet:
                 dico[i] = alphabet[position]
                 dico[i.upper()] = alphabet.upper()[position]
-                position = (position+1) % len(alphabet)
+                position = (position + 1) % len(alphabet)
 
             # print(dico)
 
@@ -35,6 +36,7 @@ def main():
             for i in s2:
                 secret += dico[i]
             print(secret)
+
         while True:
             try:
                 decalage = int(entre("Quel décalage voulez vous ? "))
@@ -45,7 +47,7 @@ def main():
 
             encoder(decalage, s)
             print(s)
-            encoder(decalage-2, s)
+            encoder(decalage - 2, s)
     except ValueError:
         print("%s" % sys.exc_info()[1])
 

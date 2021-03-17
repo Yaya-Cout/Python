@@ -53,8 +53,8 @@ def main():
         entre = input("Que fabriquaient-ils ? (Outils) 5/5 ")
         verifier("silex", "biface", "hachereau", "propulseur", "harpon")
 
-        s = ("" if totalbon < 2 else "s")
-        print("Vous avez "+str(totalbon)+" bonne"+s+" réponse"+s+" sur 10")
+        s = "" if totalbon < 2 else "s"
+        print("Vous avez " + str(totalbon) + " bonne" + s + " réponse" + s + " sur 10")
 
 
 if __name__ == "__main__":

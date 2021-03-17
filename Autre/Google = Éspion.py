@@ -1,9 +1,9 @@
 def main():
-    import webbrowser
     import time
+    import webbrowser
+
     while True:
-        webbrowser.open(
-            "https://www.google.com/search?q=Google+%3D+%C3%89spion5")
+        webbrowser.open("https://www.google.com/search?q=Google+%3D+%C3%89spion5")
         print(time.time())
         time.sleep(1)
 

@@ -1,8 +1,9 @@
 def main():
+    import argparse
+    import os
+
     import PIL
     from PIL import Image
-    import os
-    import argparse
 
     def transparant(rc, gc, bc):
         colonne, ligne = img.size
@@ -26,7 +27,7 @@ def main():
         else:
             return nom
         while existance:
-            nom = '/home/neo/b Python/Images/out/out(' + str(nombre) + ').png'
+            nom = "/home/neo/b Python/Images/out/out(" + str(nombre) + ").png"
             if os.path.isfile(nom):
                 nombre += 1
             else:
@@ -34,12 +35,13 @@ def main():
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--Image", default="none", help="Choisir l'image")
-    parser.add_argument("--R", default="none",
-                        help="Choisir la couleur rouge à enlever")
-    parser.add_argument("--V", default="none",
-                        help="Choisir la couleur verte à enlever")
-    parser.add_argument("--B", default="none",
-                        help="Choisir la couleur bleu à enlever")
+    parser.add_argument(
+        "--R", default="none", help="Choisir la couleur rouge à enlever"
+    )
+    parser.add_argument(
+        "--V", default="none", help="Choisir la couleur verte à enlever"
+    )
+    parser.add_argument("--B", default="none", help="Choisir la couleur bleu à enlever")
     args = parser.parse_args()
     image_open = args.Image
     R = args.R
@@ -56,17 +58,24 @@ def main():
             img = Image.open(image_open)
         except PIL.UnidentifiedImageError:
             print("Erreur lors de l'ouverture du fichier")
-    print("Nom : " + image_open + " Format : " + img.format +
-          " Résolution : %dx%d" % img.size + " Mode d'image : " + img.mode)
+    print(
+        "Nom : "
+        + image_open
+        + " Format : "
+        + img.format
+        + " Résolution : %dx%d" % img.size
+        + " Mode d'image : "
+        + img.mode
+    )
     selectcolor = 'zenity --color-selection --title="Veillez séléctioner une\
          couleur"'
     color = os.popen(selectcolor).read()
     color = color.replace("\n", "")
-    if 'rgba' in color:
+    if "rgba" in color:
         color = color.replace("rgba(", "")
         color = color.replace(")", "")
-        R, V, B, A = color.split(',')
-        print("R : "+str(R)+" V : "+str(V)+" B : "+str(B)+" A : "+str(A))
+        R, V, B, A = color.split(",")
+        print("R : " + str(R) + " V : " + str(V) + " B : " + str(B) + " A : " + str(A))
         R = int(R)
         V = int(V)
         B = int(B)
@@ -74,14 +83,14 @@ def main():
     else:
         color = color.replace("rgb(", "")
         color = color.replace(")", "")
-        R, V, B = color.split(',')
-        print("R : "+str(R)+" V : "+str(V)+" B : "+str(B))
+        R, V, B = color.split(",")
+        print("R : " + str(R) + " V : " + str(V) + " B : " + str(B))
         R = int(R)
         V = int(V)
         B = int(B)
     print(img.getpixel((0, 0)))
-    img.mode = 'RGBA'
-    if img.mode != 'RGBA':
+    img.mode = "RGBA"
+    if img.mode != "RGBA":
         # img.mode = 'RGBA'
         img.convert("RGBA")
 
