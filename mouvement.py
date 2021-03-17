@@ -1,13 +1,12 @@
-
 # Python program to implement
 # Webcam Motion Detector
 
-# importing OpenCV, time and Pandas library
-import cv2
-import time
-import pandas
 # importing datetime class from datetime library
 from datetime import datetime
+
+# importing OpenCV, time and Pandas library
+import cv2
+import pandas
 
 # Assigning our static_back to None
 static_back = None
@@ -56,8 +55,9 @@ while True:
     thresh_frame = cv2.dilate(thresh_frame, None, iterations=2)
 
     # Finding contour of moving object
-    cnts, _ = cv2.findContours(thresh_frame.copy(),
-                               cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    cnts, _ = cv2.findContours(
+        thresh_frame.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE
+    )
 
     for contour in cnts:
         if cv2.contourArea(contour) < 10000:
@@ -98,7 +98,7 @@ while True:
 
     key = cv2.waitKey(1)
     # if q entered whole process will stop
-    if key == ord('q'):
+    if key == ord("q"):
         # if something is movingthen it append the end time of movement
         if motion == 1:
             time.append(datetime.now())

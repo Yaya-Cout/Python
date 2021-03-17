@@ -1,5 +1,6 @@
 def main():
     import webbrowser
+
     recherche = 0
     recherche2 = 0
     while True:

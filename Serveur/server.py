@@ -1,6 +1,7 @@
 #!/bin/python3
 
-from http.server import HTTPServer, BaseHTTPRequestHandler
+import webbrowser
+from http.server import BaseHTTPRequestHandler, HTTPServer
 
 # PORT = 8888
 # server_address = ("127.0.0.1", PORT)
@@ -13,17 +14,14 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 # httpd = server(server_address, handler)
 # httpd.serve_forever()
 
-import webbrowser
-
 
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
-
     def do_GET(self):
         self.send_response(200)
         self.end_headers()
-        self.wfile.write(b'Hello, world!')
+        self.wfile.write(b"Hello, world!")
 
 
-httpd = HTTPServer(('localhost', 8000), SimpleHTTPRequestHandler)
-webbrowser.open("http://localhost:"+str(8000))
+httpd = HTTPServer(("localhost", 8000), SimpleHTTPRequestHandler)
+webbrowser.open("http://localhost:" + str(8000))
 httpd.serve_forever()

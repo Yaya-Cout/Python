@@ -1,12 +1,14 @@
-import pyperclip
-import time
 import argparse
+import time
+
+import pyperclip
 
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--file", help="File to save",
-                        default="/home/neo/Documents/clipboard.txt")
+    parser.add_argument(
+        "--file", help="File to save", default="/home/neo/Documents/clipboard.txt"
+    )
     args = parser.parse_args()
     clipbord_place = args.file
 

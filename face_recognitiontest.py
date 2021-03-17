@@ -1,13 +1,15 @@
 """Face recognition from Image/all data."""
-import face_recognition
-# from io import StringIO
-
-import os
-import cv2
 import csv
+import os
+
+import cv2
+import face_recognition
 
 # import json
 import numpy as np
+
+# from io import StringIO
+
 
 # This is a demo of running face recognition on live video from your webcam. It's a little more complicated than the
 # other example, but it includes some basic performance tweaks to make things run a lot faster:
@@ -42,8 +44,9 @@ if load:
     try:
         with open("face_recognitiontestdb.csv", "r") as db:
             if os.fstat(db.fileno()).st_size:
-                known_face_encodings = np.loadtxt(db, delimiter=",", skiprows=1,
-                                                   unpack=True).tolist()
+                known_face_encodings = np.loadtxt(
+                    db, delimiter=",", skiprows=1, unpack=True
+                ).tolist()
             else:
                 print("Error db loading : File is empty")
                 load = False

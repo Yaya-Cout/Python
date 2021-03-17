@@ -1,10 +1,12 @@
 # Python code to illustrate parsing of XML files
 # importing the required modules
 import csv
-import requests
 import xml.etree.ElementTree as ET
+
+import requests
+
 # url of rss feed
-url = 'http://yaya.cout.free.fr/Rss.php'
+url = "http://yaya.cout.free.fr/Rss.php"
 
 
 def loadRSS():
@@ -13,7 +15,7 @@ def loadRSS():
     resp = requests.get(url)
 
     # saving the xml file
-    with open('topnewsfeed.xml', 'wb') as f:
+    with open("topnewsfeed.xml", "wb") as f:
         f.write(resp.content)
         return f
 
@@ -29,7 +31,7 @@ def parseXML(xmlfile):
     newsitems = []
 
     # iterate news items
-    for item in root.findall('./channel/item'):
+    for item in root.findall("./channel/item"):
 
         # empty news dictionary
         news = {}
@@ -37,7 +39,7 @@ def parseXML(xmlfile):
         # iterate child elements of item
         for child in item:
             # print(child.text.encode('utf8'))
-            news[child.tag] = child.text.encode('utf8')
+            news[child.tag] = child.text.encode("utf8")
 
         # append news dictionary to news items list
         newsitems.append(news)
@@ -58,11 +60,10 @@ def check_new(file, filename):
 def savetoCSV(newsitems, filename):
 
     # specifying the fields for csv file
-    fields = ['guid', 'title', 'pubDate',
-              'description', 'link', 'media', 'author']
+    fields = ["guid", "title", "pubDate", "description", "link", "media", "author"]
 
     # writing to csv file
-    with open(filename, 'w') as csvfile:
+    with open(filename, "w") as csvfile:
 
         # creating a csv dict writer object
         writer = csv.DictWriter(csvfile, fieldnames=fields)
@@ -79,15 +80,15 @@ def main():
     loadRSS()
 
     # parse xml file
-    newsitems = parseXML('topnewsfeed.xml')
+    newsitems = parseXML("topnewsfeed.xml")
 
     # check new items
-    save = check_new(newsitems, 'topnews.csv')
+    save = check_new(newsitems, "topnews.csv")
     print(save)
     save = True
     if save:
         # store news items in a csv file
-        savetoCSV(newsitems, 'topnews.csv')
+        savetoCSV(newsitems, "topnews.csv")
     else:
         print("Pas de nouvel article.")
 

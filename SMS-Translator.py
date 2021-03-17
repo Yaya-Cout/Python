@@ -1,18 +1,42 @@
 """Tanslate SMS language to French."""
 import sys
+
 import enchant
+
 # import tempfile
 # import os
 
-smsdic = {"cc": "Coucou, ", "cv": "Ça va ?", "tfq": "Tu fait quoi ?",
-          "pq": "Pourquoi ?", "c": "C'est", "t": "Tu est", "xd": "😂",
-          "yep": "Oui", "k": "Ok", "nan": "Non", "nop": "Non", "nope": "Non",
-          "yes": "Oui", "oupsy": "Oups", "dacc": "D'accord", "ya": "Il y a",
-          "qqc": "Quelque chose", "pb": "Problème", "pd": "Pendent",
-          "jtd": "Je te dis", "jt": "J'était", "jv": "Je vait",
-          "tv": "Tu veux", "azerty": "Rien", "js": "Je suis",
-          "jp": "Je pense", "ts": "Tu sait", "tk": "Ne t'inquiète pas",
-          "jsp": "Je ne sis pas"}
+smsdic = {
+    "cc": "Coucou, ",
+    "cv": "Ça va ?",
+    "tfq": "Tu fait quoi ?",
+    "pq": "Pourquoi ?",
+    "c": "C'est",
+    "t": "Tu est",
+    "xd": "😂",
+    "yep": "Oui",
+    "k": "Ok",
+    "nan": "Non",
+    "nop": "Non",
+    "nope": "Non",
+    "yes": "Oui",
+    "oupsy": "Oups",
+    "dacc": "D'accord",
+    "ya": "Il y a",
+    "qqc": "Quelque chose",
+    "pb": "Problème",
+    "pd": "Pendent",
+    "jtd": "Je te dis",
+    "jt": "J'était",
+    "jv": "Je vait",
+    "tv": "Tu veux",
+    "azerty": "Rien",
+    "js": "Je suis",
+    "jp": "Je pense",
+    "ts": "Tu sait",
+    "tk": "Ne t'inquiète pas",
+    "jsp": "Je ne sis pas",
+}
 
 
 def in_dic(key) -> bool:

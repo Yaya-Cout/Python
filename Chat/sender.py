@@ -1,13 +1,14 @@
 """Graphical interface for chat module."""
-import gi
 import getpass
-import requests
 import os
+
+import gi
+import requests
+
 # import text
 
 gi.require_version("Gtk", "3.0")
 import gi.repository.Gtk as Gtk
-
 
 HOSTNAME = os.uname()[1]
 # HOSTNAME = "Mercenaire"
@@ -18,7 +19,10 @@ MSGICON = "system-search-symbolic"
 class SearchDialog(Gtk.Dialog):
     def __init__(self, parent):
         Gtk.Dialog.__init__(
-            self, title="Search", transient_for=parent, modal=True,
+            self,
+            title="Search",
+            transient_for=parent,
+            modal=True,
         )
         self.add_buttons(
             Gtk.STOCK_FIND,
@@ -42,7 +46,7 @@ def send(self, data=None):
     """Send message to server."""
     # print(notifies_combo.get_active())
     # notifiyid = notifies_combo.get_active()
-    notifyid=1
+    notifyid = 1
     if notifyid == -1:
         dialog = Gtk.MessageDialog(
             transient_for=win,

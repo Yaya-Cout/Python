@@ -1,5 +1,5 @@
 #!/bin/python3
-from speech_recognition import Recognizer, Microphone, UnknownValueError
+from speech_recognition import Microphone, Recognizer, UnknownValueError
 
 recognizer = Recognizer()
 
@@ -11,16 +11,13 @@ with Microphone() as source:
     print("Vous pouvez parler...")
     recorded_audio = recognizer.listen(source)
     print("Enregistrement terminé !")
-    with open('record.wav', 'wb') as f:
+    with open("record.wav", "wb") as f:
         f.write(recorded_audio.get_wav_data())
 # Reconnaissance de l'audio
 
 try:
     print("Reconnaissance du texte...")
-    text = recognizer.recognize_google(
-        recorded_audio,
-        language="fr-FR"
-    )
+    text = recognizer.recognize_google(recorded_audio, language="fr-FR")
     print("Vous avez dit : {}".format(text))
 
 except UnknownValueError:

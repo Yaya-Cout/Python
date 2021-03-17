@@ -1,5 +1,6 @@
 # !/usr/bin/python3
 
+
 def main():
     a = 0
     while a < 10:

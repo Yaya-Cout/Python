@@ -1,6 +1,7 @@
 # !/usr/bin/python
 def main():
     import random
+
     secret = random.randint(0, 100)
     while True:
         nombre = input("Quel est ton nombre ? ")

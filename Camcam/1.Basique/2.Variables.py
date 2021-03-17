@@ -1,5 +1,6 @@
 # !/usr/bin/python3
 
+
 def main():
     mon_texte = "Coucou"
     print(mon_texte)
