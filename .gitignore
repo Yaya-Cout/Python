@@ -1,9 +1,11 @@
 __pycache__/
 Images/all
 Images/real*
+
 **.pyc
 .vscode/
 .env.leave
 .env
 *.bin*
 *.pem*
+report/

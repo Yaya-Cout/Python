@@ -20,8 +20,8 @@ while 1:
 
     for (x, y, w, h) in faces:
         cv2.rectangle(img, (x, y), (x + w, y + h), (255, 0, 0), 2)
-        roi_gray = gray[y : y + h, x : x + w]
-        roi_color = img[y : y + h, x : x + w]
+        roi_gray = gray[y: y + h, x: x + w]
+        roi_color = img[y: y + h, x: x + w]
         nombre_face += 1
 
         eyes = eye_cascade.detectMultiScale(roi_gray)
@@ -31,10 +31,10 @@ while 1:
     k = cv2.waitKey(30) & 0xFF
     if k == 27:
         break
-    elif nombre_face == 1:
+    if nombre_face == 1:
         print("Il y a une personne")
     elif nombre_face > 1:
-        print("Il y à " + str(nombre_face) + " personnes")
+        print("Il y a " + str(nombre_face) + " personnes")
 
 cap.release()
 cv2.destroyAllWindows()
