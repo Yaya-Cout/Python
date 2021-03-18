@@ -5,7 +5,7 @@ def main():
     import PIL
     from PIL import Image
 
-    def transparant(rc, gc, bc):
+    def transparent(rc, gc, bc):
         colonne, ligne = img.size
         for c in range(colonne):
             for line in range(ligne):
@@ -19,14 +19,14 @@ def main():
                             img.putpixel((c, line), (255, 255, 255, 0))
 
     def nom_fichier():
-        existance = True
+        existence = True
         nom = "/home/neo/b Python/Images/out/out.png"
         nombre = 1
         if os.path.isfile(nom):
             pass
         else:
             return nom
-        while existance:
+        while existence:
             nom = "/home/neo/b Python/Images/out/out(" + str(nombre) + ").png"
             if os.path.isfile(nom):
                 nombre += 1
@@ -94,9 +94,9 @@ def main():
         # img.mode = 'RGBA'
         img.convert("RGBA")
 
-    # transparant(0,0,0)
-    # transparant(255,255,255)
-    transparant(R, V, B)
+    # transparent(0,0,0)
+    # transparent(255,255,255)
+    transparent(R, V, B)
 
     img.show()
     img.save(nom_fichier())

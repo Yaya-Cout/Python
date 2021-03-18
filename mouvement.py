@@ -65,7 +65,7 @@ while True:
         motion = 1
 
         (x, y, w, h) = cv2.boundingRect(contour)
-        # making green rectangle arround the moving object
+        # making green rectangle around the moving object
         cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 3)
 
     # Appending status of motion

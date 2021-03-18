@@ -5,7 +5,7 @@
     rejouer = "rejouer"
     point = 0
     credit = 0
-    commandes = 0
+    commands = 0
 
     print("Bienvenue dans ce jeu de devinette")
     dificulte = input("Quel est ton niveau de dificulté:")
@@ -18,16 +18,16 @@
         print("")
         credit = 1
 
-    elif dificulte == "commandes":
+    elif dificulte == "commands":
         print(
             'taper "credit" pour visionner les crédits;\
              taper "novelle partie" pour commancer une novelle partie; \
-                 taper "quitter" pour quitter; taper commandes pour voir les \
+                 taper "quitter" pour quitter; taper commands pour voir les \
                      commandes'
         )
-        commandes = 1
+        commands = 1
 
-    print('Pour voir les commandes taper "commandes"')
+    print('Pour voir les commands taper "commands"')
     secret = random.randint(1, int(dificulte))
     # while True:
     while rejouer == "rejouer":
@@ -50,26 +50,26 @@
             print("")
             credit = 1
 
-        elif nombre == "commandes" and commandes == 1:
+        elif nombre == "commands" and commands == 1:
             print("")
-            print("Vous avez déja visionné les commandes")
+            print("Vous avez déja visionné les commands")
             print(
                 'taper "credit" pour visionner les crédits;\
                 taper "novelle partie" pour commancer une novelle partie;\
-                     taper "quitter" pour quitter; taper commandes pour voir\
+                     taper "quitter" pour quitter; taper commands pour voir\
                           les commandes'
             )
             print("")
 
-        elif nombre == "commandes":
+        elif nombre == "commands":
             print("")
             print(
                 'taper "credit" pour visionner les crédits;\
                 taper "novelle partie" pour commancer une novelle partie;\
-                     taper "quitter" pour quitter; taper commandes pour voir\
+                     taper "quitter" pour quitter; taper commands pour voir\
                           les commandes'
             )
-            commandes = 1
+            commands = 1
             print("")
 
         elif nombre == "nouvelle partie":

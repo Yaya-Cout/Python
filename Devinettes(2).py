@@ -7,7 +7,7 @@
     rejouer = "rejouer"
     point = 0
     credit = 0
-    commandes = 0
+    commands = 0
     nbtour = 0
     Erreur2 = 1
     print("Bienvenue dans ce jeu de devinette")
@@ -18,19 +18,19 @@
         print("\n\t Et la, c'est le bug!\n")
         dificulte = input("Quel est ton niveau de dificulté:")
 
-    if dificulte == "commandes":
+    if dificulte == "commands":
         print(
             'taper "credit" pour visionner les crédits; taper"nouvelle \
             partie " pour commancer une novelle partie; taper" quitter " pour\
-                 quitter; taper commandes pour voir les commandes'
+                 quitter; taper commands pour voir les commandes'
         )
-        commandes = 1
+        commands = 1
 
-    print('Pour voir les commandes taper "commandes"')
+    print('Pour voir les commands taper "commands"')
     secret = random.randint(1, int(dificulte))
     # while True:
 
-    def tour(rejouer, secret, commandes, credit, point, Erreur, Erreur2):
+    def tour(rejouer, secret, commands, credit, point, Erreur, Erreur2):
         """Tour de jeu"""
         while rejouer == "rejouer":
             nombre = input("Quel est ton nombre: ")
@@ -52,25 +52,25 @@
                 print("")
                 credit = 1
 
-            elif nombre == "commandes" and commandes == 1:
+            elif nombre == "commands" and commands == 1:
                 print("")
-                print("Vous avez déja visionné les commandes")
+                print("Vous avez déja visionné les commands")
                 print(
                     'taper "credit" pour visionner les crédits;taper"novelle\
                      partie" pour commancer une novelle partie; taper"quitter"\
-                     pour quitter;taper commandes pour voir les commandes'
+                     pour quitter;taper commands pour voir les commandes'
                 )
                 print("")
 
-            elif nombre == "commandes":
+            elif nombre == "commands":
                 print("")
                 print(
                     'taper "credit" pour visionner les crédits;taper"novelle\
                      partie " pour commancer une novelle partie; taper \
-                     "quitter" pour quitter; taper commandes pour voir les\
+                     "quitter" pour quitter; taper commands pour voir les\
                           commandes'
                 )
-                commandes = 1
+                commands = 1
                 print("")
 
             elif nombre == "nouvelle partie":
@@ -166,7 +166,7 @@
                         or "azerty" or "Yaya.Cout"
     """
     while rejouer == "rejouer":
-        tour(rejouer, secret, commandes, credit, point, Erreur, Erreur2)
+        tour(rejouer, secret, commands, credit, point, Erreur, Erreur2)
         Erreur = 11
         if Erreur > 8:
             Erreur = 16

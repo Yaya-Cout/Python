@@ -17,14 +17,14 @@ def main():
                 img.putpixel((c, line), (rn, rn, rn))
 
     def nom_fichier():
-        existance = True
+        existence = True
         nom = "/home/neo/out.png"
         nombre = 1
         if os.path.isfile(nom):
             pass
         else:
             return nom
-        while existance:
+        while existence:
             nom = "/home/neo/out(" + str(nombre) + ").png"
             if os.path.isfile(nom):
                 nombre += 1

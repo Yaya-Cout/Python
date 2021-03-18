@@ -8,27 +8,27 @@
     rejouer = "rejouer"
     point = 0
     credit = 0
-    commandes = 0
+    commands = 0
     nbtour = 0
     Erreur2 = 1
     print("Bienvenue dans ce jeu de devinette")
 
-    print('Pour voir les commandes rapides taper "commandes"')
+    print('Pour voir les commands rapides taper "commands"')
     while rejouer == "rejouer":
 
         try:
 
             def afficheCommandes():
-                global commandes
+                global commands
 
-                if commandes == 1:
+                if commands == 1:
                     print("")
-                    print("Vous avez déja visionné les commandes")
+                    print("Vous avez déja visionné les commands")
                     print(
                         "taper « credit » pour visionner les crédits;\
                         taper « nouvelle partie » pour commancer une novelle\
                              partie; taper « quitter » pour quitter; taper\
-                                  commandes pour voir les commandes et\
+                                  commands pour voir les commands et\
                                        « aide » pour voir l "
                         + "' "
                         + "aide\
@@ -36,8 +36,8 @@
                     )
                     #                print('taper "credit" pour visionner les crédits;\
                     # taper"nouvelle partie" pour commancer une novelle partie;\
-                    #  taper"quitter" pour quitter;taper commandes pour voir les commandes\
-                    #  taper commandes pour voir les commandes et « aide » pour voir l'+"'"\
+                    #  taper"quitter" pour quitter;taper commands pour voir les commands\
+                    #  taper commands pour voir les commands et « aide » pour voir l'+"'"\
                     # +'aide complète')
                     print("")
                 else:
@@ -46,19 +46,19 @@
                         "taper « credit » pour visionner les crédits;\
                         taper « nouvelle partie » pour commancer une novelle\
                              partie; taper « quitter » pour quitter; taper \
-                                 commandes pour voir les commandes\
+                                 commands pour voir les commands\
                                       et « aide » pour voir l "
                         + "' "
                         + "aide \
                                           complète."
                     )
-                    commandes = 1
+                    commands = 1
                     print("")
 
             def aide():
                 webbrowser.open("Commandes.html")
 
-            def tour(rejouer, secret, commandes, credit, point, Erreur, Erreur2):
+            def tour(rejouer, secret, commands, credit, point, Erreur, Erreur2):
                 """Tour de jeu"""
                 while rejouer == "rejouer":
                     nombre = input("Quel est ton nombre: ")
@@ -85,26 +85,26 @@
                         print("")
                         credit = 1
 
-                    elif nombre == "commandes":
+                    elif nombre == "commands":
                         afficheCommandes()
                         continue
 
-                    # elif nombre == "commandes" and commandes==1:
+                    # elif nombre == "commands" and commands==1:
                     #     print("")
-                    #     print("Vous avez déja visionné les commandes")
+                    #     print("Vous avez déja visionné les commands")
                     #     print('taper "credit" pour visionner les crédits;\
                     # taper"novelle partie" pour commancer une novelle \
-                    # partie; taper"quitter" pour quitter;taper commandes\
+                    # partie; taper"quitter" pour quitter;taper commands\
                     #  pour voir les commandes')
                     #     print("")
                     #
-                    # elif nombre == "commandes":
+                    # elif nombre == "commands":
                     #     print("")
                     #     print('taper "credit" pour visionner les crédits;\
                     # taper"novelle partie" pour commancer une novelle\
-                    #  partie; taper"quitter" pour quitter;taper commandes\
+                    #  partie; taper"quitter" pour quitter;taper commands\
                     #  pour voir les commandes')
-                    #     commandes=1
+                    #     commands=1
                     #     print("")
 
                     elif nombre == "nouvelle partie":
@@ -220,7 +220,7 @@
 
             while rejouer == "rejouer":
                 dificulte = input("Quel est ton niveau de dificulté: ")
-                if dificulte == "commandes":
+                if dificulte == "commands":
                     afficheCommandes()
                     continue
 
@@ -236,7 +236,7 @@
                     continue
 
                 Erreur, Erreur2, rejouer = tour(
-                    rejouer, secret, commandes, credit, point, Erreur, Erreur2
+                    rejouer, secret, commands, credit, point, Erreur, Erreur2
                 )
                 # Erreur = 11
                 if Erreur > 8:
